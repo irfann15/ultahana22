@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Ucapan Ulang Tahun untuk Anaa</title>
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: url('https://images.unsplash.com/photo-1567413528677-d6adae7d7e2a?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out, pulse 3s infinite ease-in-out;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #ffcc70;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-style: italic;
+            color: #ffd280;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="confetti" id="confetti"></div>
+
+<div class="card">
+    <h1>🎉 Selamat Ulang Tahun, Anaa! 🎂</h1>
+    <p>Hari ini kamu resmi masuk usia <strong>22 tahun</strong>!</p>
+    <p>Semoga makin dewasa, makin kuat ngejalanin hidup, dan tetap jadi pribadi yang selalu nyenengin orang di sekitarnya.</p>
+    <p>Aku doain semoga semua impian kamu pelan-pelan tercapai, dan setiap langkahmu selalu dimudahkan.</p>
+    <p>Tetap jadi kamu yang apa adanya — seru, baik, dan nggak pernah berubah meski waktu terus jalan.</p>
+    <div class="footer">Have a great year ahead! ✨🙌</div>
+</div>
+
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutar audio.
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    const duration = 5 * 1000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 3,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+        });
+        confetti({
+            particleCount: 3,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    }());
+</script>
+
+</body>
+</html>
